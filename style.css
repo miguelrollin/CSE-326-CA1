@@ -1,0 +1,276 @@
+/* ---------- COLOURS AND FONTS ---------- */
+:root {
+  --cream: #f4efe6;
+  --ink: #151515;
+  --yellow: #ffe14d;
+  --blue: #46699a;
+  --green: #35d07f;
+  --sky: #86c5f4;
+}
+
+/* ---------- BASICS ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h1 { font-size: clamp(3rem, 8vw, 6rem); }
+h2 { font-size: 2.5rem; }
+
+/* ---------- BUTTON ---------- */
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 5%;
+  border-bottom: 2px solid var(--ink);
+}
+
+nav a {
+  margin-left: 1.5rem;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav a:hover { text-decoration: underline; }
+
+nav .logo {
+  margin: 0;
+  font-family: "Anton", sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+/* ---------- HERO (home page) ---------- */
+.hero {
+  padding: 4rem 5% 2rem;
+  text-align: center;
+  animation: fadeUp 1s; /* slides up when the page loads */
+}
+
+.hero h1 {
+  max-width: 11em;
+  margin: 0 auto;
+}
+
+.hero p {
+  max-width: 32rem;
+  margin: 1.5rem auto;
+}
+
+.highlight {
+  background: var(--green);
+  padding: 0 0.2em;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+}
+
+/* ---------- MOVING STRIP ---------- */
+.ticker {
+  margin: 2rem 0;
+  background: var(--green);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(-2deg); /* tilted like a sticker tape */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker p {
+  display: inline-block;
+  padding: 0.6rem 0;
+  font-family: "Anton", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- DASHBOARD (blue band) ---------- */
+.dashboard {
+  padding: 4rem 5%;
+  background: var(--blue);
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  padding: 1.5rem;
+  background: white;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 0 var(--ink);
+}
+
+.number {
+  display: block;
+  font-family: "Anton", sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.bar {
+  height: 1.5rem;
+  margin-top: 0.5rem;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#barFill {
+  width: 0;
+  height: 100%;
+  background: var(--green);
+  transition: width 1s; /* the bar grows smoothly */
+}
+
+/* ---------- OTHER PAGES ---------- */
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+.page h1 {
+  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+}
+
+/* ---------- FORM ---------- */
+form {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+}
+
+label { font-weight: 700; }
+
+input, select {
+  padding: 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#message { font-weight: 700; }
+.error { color: #b42318; }
+.success { color: #1a7f4b; }
+
+/* ---------- VOLUNTEER LIST ---------- */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tools input { flex: 1; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding: 1rem 1.2rem;
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: 1rem;
+  transition: transform 0.2s;
+}
+
+.row:hover { transform: translateX(6px); }
+
+.status {
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.Pending   { background: var(--yellow); }
+.Confirmed { background: var(--green); }
+.Completed { background: var(--sky); }
+
+.remove {
+  margin-left: 0.5rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 2rem 5%;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+}

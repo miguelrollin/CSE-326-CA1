@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Volunteer - Hands Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Hands Up</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="add.html">Add</a>
+      <a href="volunteers.html">Volunteers</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>Add a volunteer</h1>
+
+    <!-- novalidate lets our own JavaScript show the error messages -->
+    <form id="addForm" novalidate>
+      <label for="name">Full name</label>
+      <input type="text" id="name" placeholder="e.g. Aarav Nair">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="name@example.com">
+
+      <label for="eventName">Event</label>
+      <select id="eventName">
+        <option value="">Choose an event</option>
+        <option>Orientation Day</option>
+        <option>Food Drive</option>
+        <option>Tech Workshop</option>
+        <option>Charity Run</option>
+      </select>
+
+      <button type="submit" class="button">Save volunteer</button>
+      <p id="message"></p>
+    </form>
+
+    <a href="volunteers.html" class="button">See all volunteers →</a>
+  </main>
+
+  <footer>
+    <p>Hands Up · Club volunteer allocation portal</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="add.js"></script>
+</body>
+</html>

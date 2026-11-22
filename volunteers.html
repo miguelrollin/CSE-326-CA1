@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteers - Hands Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Hands Up</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="add.html">Add</a>
+      <a href="volunteers.html">Volunteers</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <h1>Volunteers</h1>
+
+    <!-- Search and filters: showList() runs again every time they change -->
+    <div class="tools">
+      <input type="search" id="search" placeholder="Search by name" oninput="showList()">
+
+      <select id="eventFilter" onchange="showList()">
+        <option value="All">All events</option>
+        <option>Orientation Day</option>
+        <option>Food Drive</option>
+        <option>Tech Workshop</option>
+        <option>Charity Run</option>
+      </select>
+
+      <select id="statusFilter" onchange="showList()">
+        <option value="All">All statuses</option>
+        <option>Pending</option>
+        <option>Confirmed</option>
+        <option>Completed</option>
+      </select>
+    </div>
+
+    <p id="count"></p>
+    <p>Click a status to change it.</p>
+
+    <!-- The rows are built by volunteers.js -->
+    <div id="list"></div>
+  </main>
+
+  <footer>
+    <p>Hands Up · Club volunteer allocation portal</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="volunteers.js"></script>
+</body>
+</html>

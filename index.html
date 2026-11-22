@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hands Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Hands Up</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="add.html">Add</a>
+      <a href="volunteers.html">Volunteers</a>
+    </div>
+  </nav>
+
+  <!-- Big headline -->
+  <header class="hero">
+    <h1>Volunteers, your events deserve better than a <span class="highlight">group chat</span></h1>
+    <p>Hands Up helps your club sign people up and see who has confirmed. One place, no scrolling through messages.</p>
+    <a href="add.html" class="button">Add a volunteer →</a>
+  </header>
+
+  <!-- Moving strip (the same text is repeated so the loop has no gap) -->
+  <div class="ticker">
+    <p>Fill every event • Confirm in one click • Fill every event • Confirm in one click • Fill every event • Confirm in one click • Fill every event • Confirm in one click • Fill every event • Confirm in one click • Fill every event • Confirm in one click • </p>
+  </div>
+
+  <!-- Dashboard: the numbers are filled in by home.js -->
+  <section class="dashboard">
+    <h2>Club dashboard</h2>
+
+    <div class="cards">
+      <div class="card"><span class="number" id="total">0</span>Total volunteers</div>
+      <div class="card"><span class="number" id="pending">0</span>Pending</div>
+      <div class="card"><span class="number" id="confirmed">0</span>Confirmed</div>
+      <div class="card"><span class="number" id="completed">0</span>Completed</div>
+    </div>
+
+    <p id="percentText">0% completed</p>
+    <div class="bar"><div id="barFill"></div></div>
+  </section>
+
+  <footer>
+    <p>Hands Up · Club volunteer allocation portal</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
